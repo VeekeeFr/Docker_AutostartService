@@ -1,0 +1,11 @@
+[Unit]
+Description=DockerService
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=10
+ExecStart={{ SCRIPTPATH }}/docker_process_checker.sh
+
+[Install]
+WantedBy=multi-user.target
